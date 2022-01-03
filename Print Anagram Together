@@ -1,0 +1,25 @@
+this is easy question just we have to use unnordered map property and insert word accoding to sorting .
+
+class Solution{
+  public:
+    vector<vector<string> > Anagrams(vector<string>& st) {
+        //code here
+        unordered_map<string, vector<string>>mp;
+        int n=st.size();
+        string temp;
+        
+        for(int i=0; i<n; i++){
+            temp=st[i];
+            sort(st[i].begin(),st[i].end());
+            mp[st[i]].push_back(temp);
+        }
+        
+        vector<vector<string>>res;
+        for(auto it=mp.begin(); it!=mp.end(); it++){
+            res.push_back(it->second);
+            
+
+        }
+                    return res;
+    }
+};
